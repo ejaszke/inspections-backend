@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6aab57cd-ab48-492b-982c-6c76066e68ed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wsgi.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +67,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1603442437379</updated>
-      <workItem from="1603442440330" duration="5744000" />
+      <workItem from="1603442440330" duration="5897000" />
     </task>
     <task id="LOCAL-00001" summary="Init project">
       <created>1603445342785</created>
@@ -85,7 +83,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603447004814</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add gunicorn">
+      <created>1603449058670</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1603449058670</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -94,21 +99,22 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init project" />
     <MESSAGE value="Add pdf generating" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add pdf generating" />
+    <MESSAGE value="Add gunicorn" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add gunicorn" />
   </component>
   <component name="WindowStateProjectService">
     <state x="453" y="236" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603448995210">
       <screen x="0" y="23" width="1440" height="807" />
     </state>
     <state x="453" y="236" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.807@0.23.1440.807" timestamp="1603448995210" />
-    <state x="270" y="27" key="CommitChangelistDialog2" timestamp="1603447004649">
+    <state x="270" y="27" key="CommitChangelistDialog2" timestamp="1603449058522">
       <screen x="0" y="23" width="1440" height="807" />
     </state>
-    <state x="270" y="27" key="CommitChangelistDialog2/0.23.1440.807@0.23.1440.807" timestamp="1603447004649" />
-    <state x="320" y="166" key="Vcs.Push.Dialog.v2" timestamp="1603447007165">
+    <state x="270" y="27" key="CommitChangelistDialog2/0.23.1440.807@0.23.1440.807" timestamp="1603449058522" />
+    <state x="320" y="166" key="Vcs.Push.Dialog.v2" timestamp="1603449060924">
       <screen x="0" y="23" width="1440" height="807" />
     </state>
-    <state x="320" y="166" key="Vcs.Push.Dialog.v2/0.23.1440.807@0.23.1440.807" timestamp="1603447007165" />
+    <state x="320" y="166" key="Vcs.Push.Dialog.v2/0.23.1440.807@0.23.1440.807" timestamp="1603449060924" />
     <state x="399" y="259" key="com.intellij.ide.util.TipDialog" timestamp="1603442441388">
       <screen x="0" y="23" width="1440" height="807" />
     </state>
