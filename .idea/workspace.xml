@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6aab57cd-ab48-492b-982c-6c76066e68ed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/templates/sample.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wsgi.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements-dev.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements-dev.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/user.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +26,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/routes" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -39,14 +36,15 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/routes" />
       <recent name="$PROJECT_DIR$/src/swagger" />
       <recent name="$PROJECT_DIR$/src/resources" />
       <recent name="$PROJECT_DIR$/test" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -71,7 +69,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1603442437379</updated>
-      <workItem from="1603442440330" duration="4267000" />
+      <workItem from="1603442440330" duration="5744000" />
     </task>
     <task id="LOCAL-00001" summary="Init project">
       <created>1603445342785</created>
@@ -80,7 +78,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603445342786</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add pdf generating">
+      <created>1603447004814</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1603447004814</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -88,20 +93,29 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Init project" />
+    <MESSAGE value="Add pdf generating" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add pdf generating" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="270" y="27" key="CommitChangelistDialog2" timestamp="1603445342573">
+    <state x="453" y="236" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603448995210">
       <screen x="0" y="23" width="1440" height="807" />
     </state>
-    <state x="270" y="27" key="CommitChangelistDialog2/0.23.1440.807@0.23.1440.807" timestamp="1603445342573" />
-    <state x="320" y="166" key="Vcs.Push.Dialog.v2" timestamp="1603445349413">
+    <state x="453" y="236" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.807@0.23.1440.807" timestamp="1603448995210" />
+    <state x="270" y="27" key="CommitChangelistDialog2" timestamp="1603447004649">
       <screen x="0" y="23" width="1440" height="807" />
     </state>
-    <state x="320" y="166" key="Vcs.Push.Dialog.v2/0.23.1440.807@0.23.1440.807" timestamp="1603445349413" />
+    <state x="270" y="27" key="CommitChangelistDialog2/0.23.1440.807@0.23.1440.807" timestamp="1603447004649" />
+    <state x="320" y="166" key="Vcs.Push.Dialog.v2" timestamp="1603447007165">
+      <screen x="0" y="23" width="1440" height="807" />
+    </state>
+    <state x="320" y="166" key="Vcs.Push.Dialog.v2/0.23.1440.807@0.23.1440.807" timestamp="1603447007165" />
     <state x="399" y="259" key="com.intellij.ide.util.TipDialog" timestamp="1603442441388">
       <screen x="0" y="23" width="1440" height="807" />
     </state>
     <state x="399" y="259" key="com.intellij.ide.util.TipDialog/0.23.1440.807@0.23.1440.807" timestamp="1603442441388" />
+    <state x="386" y="183" width="667" height="486" key="find.popup" timestamp="1603448278180">
+      <screen x="0" y="23" width="1440" height="807" />
+    </state>
+    <state x="386" y="183" width="667" height="486" key="find.popup/0.23.1440.807@0.23.1440.807" timestamp="1603448278180" />
   </component>
 </project>
