@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6aab57cd-ab48-492b-982c-6c76066e68ed" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspections-backend.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.isort.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/makefiles/database.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/makefiles/format.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/makefiles/help.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/makefiles/server.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/makefiles/test.mk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/README" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/alembic.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/env.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/script.py.mako" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/versions/4f2e2c180af_.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/versions/51e2c29ad95_.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements-dev.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/setup.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/abc.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/repositories/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/repositories/user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/server.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/swagger/user/GET.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/swagger/user/POST.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/swagger/user/PUT.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/util/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/util/parse_params.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/test_swagger.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/test_swagger_coverage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/test_user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1jGtpFj405T0bl03vfcayIl5pFm" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/test" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6aab57cd-ab48-492b-982c-6c76066e68ed" name="Default Changelist" comment="" />
+      <created>1603442437379</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1603442437379</updated>
+      <workItem from="1603442440330" duration="2669000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="270" y="27" key="CommitChangelistDialog2" timestamp="1603442637285">
+      <screen x="0" y="23" width="1440" height="807" />
+    </state>
+    <state x="270" y="27" key="CommitChangelistDialog2/0.23.1440.807@0.23.1440.807" timestamp="1603442637285" />
+    <state x="399" y="259" key="com.intellij.ide.util.TipDialog" timestamp="1603442441388">
+      <screen x="0" y="23" width="1440" height="807" />
+    </state>
+    <state x="399" y="259" key="com.intellij.ide.util.TipDialog/0.23.1440.807@0.23.1440.807" timestamp="1603442441388" />
+  </component>
+</project>
