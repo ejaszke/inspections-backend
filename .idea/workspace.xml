@@ -4,7 +4,6 @@
     <list default="true" id="6aab57cd-ab48-492b-982c-6c76066e68ed" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wsgi.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +67,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1603442437379</updated>
-      <workItem from="1603442440330" duration="6424000" />
+      <workItem from="1603442440330" duration="6779000" />
     </task>
     <task id="LOCAL-00001" summary="Init project">
       <created>1603445342785</created>
@@ -105,7 +104,21 @@
       <option name="project" value="LOCAL" />
       <updated>1603449292807</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Change procfile">
+      <created>1603449811654</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1603449811654</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Remove unused print module">
+      <created>1603450039433</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1603450039433</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,21 +130,23 @@
     <MESSAGE value="Add gunicorn" />
     <MESSAGE value="Fix Procfile" />
     <MESSAGE value="Fix requirements.txt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix requirements.txt" />
+    <MESSAGE value="Change procfile" />
+    <MESSAGE value="Remove unused print module" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove unused print module" />
   </component>
   <component name="WindowStateProjectService">
     <state x="453" y="236" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603448995210">
       <screen x="0" y="23" width="1440" height="807" />
     </state>
     <state x="453" y="236" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.807@0.23.1440.807" timestamp="1603448995210" />
-    <state x="270" y="27" key="CommitChangelistDialog2" timestamp="1603449811525">
+    <state x="270" y="27" key="CommitChangelistDialog2" timestamp="1603450039301">
       <screen x="0" y="23" width="1440" height="807" />
     </state>
-    <state x="270" y="27" key="CommitChangelistDialog2/0.23.1440.807@0.23.1440.807" timestamp="1603449811525" />
-    <state x="320" y="166" key="Vcs.Push.Dialog.v2" timestamp="1603449813486">
+    <state x="270" y="27" key="CommitChangelistDialog2/0.23.1440.807@0.23.1440.807" timestamp="1603450039301" />
+    <state x="320" y="166" key="Vcs.Push.Dialog.v2" timestamp="1603450041102">
       <screen x="0" y="23" width="1440" height="807" />
     </state>
-    <state x="320" y="166" key="Vcs.Push.Dialog.v2/0.23.1440.807@0.23.1440.807" timestamp="1603449813486" />
+    <state x="320" y="166" key="Vcs.Push.Dialog.v2/0.23.1440.807@0.23.1440.807" timestamp="1603450041102" />
     <state x="399" y="259" key="com.intellij.ide.util.TipDialog" timestamp="1603442441388">
       <screen x="0" y="23" width="1440" height="807" />
     </state>
