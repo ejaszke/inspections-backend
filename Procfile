@@ -1,1 +1,1 @@
-web: gunicorn wsgi:my_awesome_app
+web: gunicorn --chdir src server:run
