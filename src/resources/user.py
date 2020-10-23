@@ -9,17 +9,18 @@ from flask_restful.reqparse import Argument
 
 from repositories import UserRepository
 from util import parse_params
-
+from flask import render_template
+from flask_weasyprint import HTML, render_pdf
 
 class UserResource(Resource):
     """ Verbs relative to the users """
 
     @staticmethod
     @swag_from("../swagger/user/GET.yml")
-    def get(last_name, first_name):
-        """ Return an user key information based on his name """
-        user = UserRepository.get(last_name=last_name, first_name=first_name)
-        return jsonify({"user": user.json})
+    def get(name):
+        """ Return an pdf """
+        html = render_template('sample.html', name=name)
+        return render_pdf(HTML(string=html))
 
     @staticmethod
     @parse_params(
