@@ -27,10 +27,10 @@ class UserResource(Resource):
         Argument("age", location="json", required=True, help="The age of the user.")
     )
     @swag_from("../swagger/user/POST.yml")
-    def post(last_name, first_name, age):
+    def post(name, age):
         """ Create an user based on the sent information """
         user = UserRepository.create(
-            last_name=last_name, first_name=first_name, age=age
+            last_name=name, first_name="test", age=age
         )
         return jsonify({"user": user.json})
 

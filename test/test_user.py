@@ -20,21 +20,16 @@ class TestUser(unittest.TestCase):
         db.drop_all()
 
     def test_get(self):
-        """ The GET on `/user` should return an user """
+        """ The GET on `/user` should return an pdf file """
         UserRepository.create(first_name="John", last_name="Doe", age=25)
-        response = self.client.get("/application/user/Doe/John")
+        response = self.client.get("/application/user/Doe")
 
         self.assertEqual(response.status_code, 200)
-        response_json = json.loads(response.data.decode("utf-8"))
-        self.assertEqual(
-            response_json,
-            {"user": {"age": 25, "first_name": "John", "last_name": "Doe"}},
-        )
 
     def test_create(self):
         """ The POST on `/user` should create an user """
         response = self.client.post(
-            "/application/user/Doe/John",
+            "/application/user/Doe",
             content_type="application/json",
             data=json.dumps({"age": 30}),
         )
