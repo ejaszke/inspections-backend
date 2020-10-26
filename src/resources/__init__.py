@@ -1,1 +1,1 @@
-from .user import UserResource
+from resources.user.users_resources import UsersResources
