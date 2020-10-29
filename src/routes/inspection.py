@@ -3,7 +3,6 @@ from flask_restful import Api
 from flask_cors import CORS
 
 from resources import InspectionsResource
-from resources import NewInspectionResource
 from resources import InspectionResource
 
 
@@ -16,9 +15,5 @@ Api(INSPECTION_BLUEPRINT).add_resource(
 )
 
 Api(INSPECTION_BLUEPRINT).add_resource(
-    NewInspectionResource, "/inspection"
-)
-
-Api(INSPECTION_BLUEPRINT).add_resource(
-    InspectionResource, "/inspection/<string:id>"
+    InspectionResource, "/inspections/<string:id>"
 )
