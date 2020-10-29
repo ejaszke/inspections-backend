@@ -14,6 +14,6 @@ class UserResource(Resource):
     #     return render_pdf(HTML(string=html))
 
     @staticmethod
-    def get(user_id: int):
-        user = UserRepository.find_by_id(user_id)
-        return {"user": user.json}
+    def get(id: str):
+        user = UserRepository.find_by_id(id)
+        return user.json

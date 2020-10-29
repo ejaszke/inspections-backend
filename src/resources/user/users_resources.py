@@ -23,4 +23,4 @@ class UsersResources(Resource):
         user = UserRepository.create(
             email=email, password=generate_password_hash(password)
         )
-        return {"user": user.json}
+        return user.json
