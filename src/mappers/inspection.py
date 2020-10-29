@@ -1,7 +1,7 @@
 from models import Inspection, InspectionTime, InspectionConfirmation
 
 
-class InspectionTransformer:
+class InspectionMapper:
     @staticmethod
     def transform(inspection: Inspection):
         return {
@@ -10,9 +10,9 @@ class InspectionTransformer:
             "street": inspection.street,
             "street_number": inspection.street_number,
             "staircases": inspection.staircases,
-            "times": [InspectionTransformer.transform_time(time) for time in inspection.times],
+            "times": [InspectionMapper.transform_time(time) for time in inspection.times],
             "confirmations": [
-                InspectionTransformer.transform_confirmation(confirmation) for confirmation in inspection.confirmations
+                InspectionMapper.transform_confirmation(confirmation) for confirmation in inspection.confirmations
             ]
         }
 
