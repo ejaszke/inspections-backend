@@ -51,12 +51,19 @@ class BaseModel:
         """ Define a base way to jsonify models
             Columns inside `to_json_filter` are excluded """
         return {
-            column: value
-            if not isinstance(value, datetime)
-            else value.strftime("%Y-%m-%d")
+            column: self.parse_value(value)
             for column, value in self._to_dict().items()
             if column not in self.to_json_filter
         }
+
+    @staticmethod
+    def parse_value(value):
+        if isinstance(value, datetime):
+            return value.strftime("%Y-%m-%d")
+        elif isinstance(value, BaseModel):
+            return value.json
+        else:
+            return value
 
     def _to_dict(self):
         """ This would more or less be the same as a `to_json`
