@@ -2,6 +2,7 @@
 from flasgger import Swagger
 from flask import Flask
 from flask.blueprints import Blueprint
+from flask_jwt_extended import JWTManager
 
 import config
 import routes
@@ -37,6 +38,9 @@ server.config["SQLALCHEMY_DATABASE_URI"] = config.DB_URI
 server.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = config.SQLALCHEMY_TRACK_MODIFICATIONS
 db.init_app(server)
 db.app = server
+
+server.config['JWT_SECRET_KEY'] = config.JWT_SECRET
+jwt = JWTManager(server)
 
 for blueprint in vars(routes).values():
     if isinstance(blueprint, Blueprint):
