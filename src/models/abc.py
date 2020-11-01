@@ -59,7 +59,6 @@ class BaseModel:
 
     @staticmethod
     def parse_value(value):
-        print(value)
         if isinstance(value, datetime):
             return value.strftime("%Y-%m-%d")
         elif isinstance(value, BaseModel):
