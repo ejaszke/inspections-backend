@@ -17,12 +17,12 @@ services:
   dbdata:
     image: busybox
     volumes:
-      - /var/lib/postgresql/data
+      - db-data:/var/lib/postgresql/data
 
   db:
     image: postgres:9.4
-    volumes_from:
-      - dbdata
+    volumes:
+      - db-data:/var/lib/postgresql/data
     environment:
       POSTGRES_HOST_AUTH_METHOD: trust
 
@@ -54,3 +54,5 @@ services:
 networks:
   test_network:
 
+volumes:
+  db-data:
