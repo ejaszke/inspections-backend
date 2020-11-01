@@ -2,11 +2,11 @@ from flask import Blueprint
 from flask_restful import Api
 from flask_cors import CORS
 
-from resources import InspectionsResource
-from resources import InspectionResource
+from resources.inspection import InspectionsResource
+from resources.inspection import InspectionResource
 
 
-INSPECTION_BLUEPRINT = Blueprint("inspection", __name__)
+INSPECTION_BLUEPRINT = Blueprint("inspections", __name__)
 
 CORS(INSPECTION_BLUEPRINT)
 

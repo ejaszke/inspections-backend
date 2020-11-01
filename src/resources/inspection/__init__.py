@@ -1,0 +1,2 @@
+from resources.inspection.inspection import InspectionResource
+from resources.inspection.inspections import InspectionsResource

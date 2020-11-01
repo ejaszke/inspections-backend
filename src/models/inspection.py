@@ -1,7 +1,8 @@
 from . import db
 from .abc import BaseModel, MetaBaseModel
-from uuid import uuid4
 from datetime import datetime
+from sqlalchemy.dialects.postgresql import UUID
+from uuid import uuid4
 
 
 class Inspection(db.Model, BaseModel, metaclass=MetaBaseModel):
@@ -9,7 +10,7 @@ class Inspection(db.Model, BaseModel, metaclass=MetaBaseModel):
 
     # to_json_filter = ('times', 'confirmations')
 
-    id = db.Column(db.String(36), primary_key=True)
+    id = db.Column(UUID(as_uuid=True), primary_key=True, default=uuid4, unique=True)
     city = db.Column(db.String(100), nullable=True)
     street = db.Column(db.String(300))
     street_number = db.Column(db.String(10))
@@ -20,7 +21,6 @@ class Inspection(db.Model, BaseModel, metaclass=MetaBaseModel):
     confirmations = db.relationship('InspectionConfirmation')
 
     def __init__(self, city, street, street_number, staircases):
-        self.id = uuid4().__str__()
         self.city = city
         self.street = street
         self.street_number = street_number

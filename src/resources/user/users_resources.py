@@ -20,7 +20,8 @@ class UsersResources(Resource):
     def post(email: str, password: str):
         if UserRepository.find_by_email(email):
             return {"message": "Email already exits"}, 400
-        user = UserRepository.create(
-            email=email, password=generate_password_hash(password)
-        )
+        else:
+            user = UserRepository.create(
+                email=email, password=generate_password_hash(password)
+            )
         return user.json
