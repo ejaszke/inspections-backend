@@ -1,7 +1,7 @@
 from flask_restful import Resource
-
-from models import InspectionConfirmation
+from util import parse_params
 from repositories import InspectionRepository
+from flask_restful.reqparse import Argument
 
 
 class InspectionsResource(Resource):
@@ -11,8 +11,14 @@ class InspectionsResource(Resource):
         return [u.json for u in inspections]
 
     @staticmethod
-    def post():
-        inspection = InspectionRepository.create('City', 'Street', '23', '1-12')
-        inspection.confirmations.append(InspectionConfirmation('Yes', 'Test'))
-        inspection.save()
+    @parse_params(
+        Argument("city", location="json", required=True, help="Missing parameter"),
+        Argument("street", location="json", required=True, help="Missing parameter"),
+        Argument("street_number", location="json", required=True, help="Missing parameter"),
+        Argument("staircases", location="json", required=True, help="Missing parameter"),
+    )
+    def post(city: str, street: str, street_number: str, staircases: str):
+        inspection = InspectionRepository.create(city, street, street_number, staircases)
         return inspection.json
+
+

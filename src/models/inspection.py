@@ -17,8 +17,8 @@ class Inspection(db.Model, BaseModel, metaclass=MetaBaseModel):
     staircases = db.Column(db.String(100))
     created_at = db.Column(db.DateTime, default=datetime.now)
     updated_at = db.Column(db.DateTime, onupdate=datetime.now)
-    times = db.relationship('InspectionTime')
-    confirmations = db.relationship('InspectionConfirmation')
+    times = db.relationship('InspectionTime', passive_deletes=True)
+    confirmations = db.relationship('InspectionConfirmation', passive_deletes=True)
 
     def __init__(self, city, street, street_number, staircases):
         self.city = city

@@ -1,6 +1,4 @@
 from models import Inspection
-from models import InspectionTime
-from models import InspectionConfirmation
 
 
 class InspectionRepository:
@@ -16,3 +14,15 @@ class InspectionRepository:
     def create(city, street, street_number, staircases):
         inspection = Inspection(city, street, street_number, staircases)
         return inspection.save()
+
+    @staticmethod
+    def update(inspection: Inspection, city, street, street_number, staircases):
+        inspection.city = city
+        inspection.street = street
+        inspection.street_number = street_number
+        inspection.staircases = staircases
+        return inspection.save()
+
+    @staticmethod
+    def delete(inspection: Inspection):
+        return inspection.delete()

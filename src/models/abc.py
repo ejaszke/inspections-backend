@@ -3,7 +3,7 @@ Define an Abstract Base Class (ABC) for models
 """
 from datetime import datetime
 from weakref import WeakValueDictionary
-
+from datetime import date, time
 from sqlalchemy import inspect
 from sqlalchemy.orm import aliased
 from uuid import UUID
@@ -61,6 +61,10 @@ class BaseModel:
     def parse_value(value):
         if isinstance(value, datetime):
             return value.strftime("%Y-%m-%d")
+        elif isinstance(value, date):
+            return value.strftime("%Y-%m-%d")
+        elif isinstance(value, time):
+            return value.strftime("%H:%M")
         elif isinstance(value, BaseModel):
             return value.json
         elif isinstance(value, UUID):
