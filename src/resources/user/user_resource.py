@@ -2,7 +2,7 @@ from flask_restful import Resource
 from repositories import UserRepository
 from flask import render_template
 from flask_weasyprint import HTML, render_pdf
-
+from flask_jwt_extended import jwt_required
 
 class UserResource(Resource):
 
@@ -14,6 +14,7 @@ class UserResource(Resource):
     #     return render_pdf(HTML(string=html))
 
     @staticmethod
+    @jwt_required
     def get(id: str):
         user = UserRepository.find_by_id(id)
         return user.json
