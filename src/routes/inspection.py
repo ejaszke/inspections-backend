@@ -4,7 +4,7 @@ from flask_cors import CORS
 
 from resources.inspection import InspectionsResource
 from resources.inspection import InspectionResource
-
+from resources.inspection import InspectionTimesResource
 
 INSPECTION_BLUEPRINT = Blueprint("inspections", __name__)
 
@@ -16,4 +16,11 @@ Api(INSPECTION_BLUEPRINT).add_resource(
 
 Api(INSPECTION_BLUEPRINT).add_resource(
     InspectionResource, "/inspections/<string:id>"
+)
+
+Api(INSPECTION_BLUEPRINT).add_resource(
+    InspectionTimesResource,
+    "/inspections/<string:id>/times",
+    "/inspections/<string:inspection_id>/times/<string:inspection_time_id>",
+
 )
