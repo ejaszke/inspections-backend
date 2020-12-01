@@ -1,3 +1,4 @@
 from resources.inspection.inspection import InspectionResource
 from resources.inspection.inspections import InspectionsResource
 from resources.inspection.inspection_times import InspectionTimesResource
+from resources.inspection.inspection_pdfs import InspectionPdfResource

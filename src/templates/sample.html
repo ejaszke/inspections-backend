@@ -1,2 +1,123 @@
 <!doctype html>
-<p>Hello, {{ name }}!</p>
+<head>
+    <style>
+        @page {
+            size: A4; /* Change from the default size of A4 */
+            margin: 0 1cm 0 1cm; /* Set margin on each page */
+        }
+
+        .logo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            opacity: 0.5;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+        }
+
+        .footer img {
+                        width: 10cm;
+            opacity: 0.5;
+        }
+
+        .current-date {
+            position: fixed;
+            top: 1.5cm;
+            right: 1cm;
+            opacity: 0.5;
+        }
+
+        .logo img {
+            width: 10cm;
+        }
+
+        .main-text {
+            margin-top: 3.5cm;
+            font-family:  sans-serif;
+        }
+
+        .time {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        p {
+            position: relative;;
+            font-size: 18pt;
+            z-index: 20;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img
+            src="{{ url_for('static', filename = 'img/adm-logo.png') }}"
+            alt="previous"
+            title="Previous"
+    />
+    </div>
+
+    <div class="footer">
+        <img
+            src="{{ url_for('static', filename = 'img/footer-logo.png') }}"
+            alt="previous"
+            title="Previous"
+    />
+    </div>
+
+    <div class="current-date">
+        Orzesze, 21.10.2020r.
+    </div>
+
+    <div class="main-text">
+        <h1>Szanowni Państwo,</h1>
+
+        <p>
+            Informujemy, że w budynkach przy ul. Pułaskiego 42, 44 w Katowicach przeprowadzony
+            zostanie termin poprawkowy <strong>przeglądu wentylacji mechanicznej w mieszkaniach</strong>.
+            Przegląd ten jest obowiązkowy, wymagany prawem budowlanym (art. 62 Prawa Budowlanego). 
+            Przegląd odbędzie się w poniższych terminach:
+        </p>
+
+        <ul>
+            <li class="time">
+                4.11.2020r. ( środa ) w godz. 16:00 – 20:30
+            </li>
+            <li class="time">
+                {{ issue.strftime("%d.%m.%Y") }}r.
+                {{ day_of_week }}
+            </li>
+
+        </ul>
+
+        <p>
+            Uprzejmie prosimy o udostępnianie lokali mieszkalnych w/w terminach ( Zalecamy, aby informację o obecności w dniu kontroli wysyłać wiadomością SMS na tel. 509-969-352)
+Przegląd będzie wykonywał p. Jarek tel. 509-969-352
+        </p>
+        <p>
+
+
+W przypadku nieobecności bardzo prosimy o wcześniejsze zgłoszenie do Wykonawcy ( e-mail lub SMS ).
+Telefon kontaktowy DomGroup: 608-544-792
+e-mail: dg-serwis@domgroup.pl
+        </p>
+
+        <p>
+
+WAŻNE: W trakcie przeglądu prosimy o przestrzeganie rygorów związanych z sytuacją epidemiologiczną. Prosimy o założenie na czas kontroli maseczek ochronnych, zachowanie dystansu ok. 2m oraz przygotowanie własnego długopisu w celu potwierdzenia odbioru protokołu z kontroli.
+        </p>
+
+        <p>
+            Z poważaniem
+            Zespół ADM Property sp. z o.o.
+        </p>
+    </div>
+
+
+</h1>
+</body>
+
