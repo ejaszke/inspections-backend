@@ -45,9 +45,14 @@
             font-size: 20px;
         }
 
+        h1 {
+            position: relative;
+            z-index: 1;
+        }
+
         p {
-            position: relative;;
-            font-size: 18pt;
+            position: relative;
+            font-size: 14pt;
             z-index: 20;
         }
     </style>
@@ -70,28 +75,29 @@
     </div>
 
     <div class="current-date">
-        Orzesze, 21.10.2020r.
+        Orzesze, {{ current_date.strftime("%d.%m.%Y") }}r.
     </div>
 
     <div class="main-text">
-        <h1>Szanowni Państwo,</h1>
+        <h1>Szanowni Państwo. </h1>
 
         <p>
-            Informujemy, że w budynkach przy ul. Pułaskiego 42, 44 w Katowicach przeprowadzony
+            Informujemy, że w budynkach przy ul. {{ inspection.street }} {{ inspection.street_number }} / {{ inspection.staircases}} w {{ inspection.city }} przeprowadzony
             zostanie termin poprawkowy <strong>przeglądu wentylacji mechanicznej w mieszkaniach</strong>.
             Przegląd ten jest obowiązkowy, wymagany prawem budowlanym (art. 62 Prawa Budowlanego). 
-            Przegląd odbędzie się w poniższych terminach:
+
         </p>
 
-        <ul>
-            <li class="time">
-                4.11.2020r. ( środa ) w godz. 16:00 – 20:30
-            </li>
-            <li class="time">
-                {{ issue.strftime("%d.%m.%Y") }}r.
-                {{ day_of_week }}
-            </li>
+        <p>Przegląd odbędzie się w poniższych terminach:</p>
 
+        <ul>
+            {%for i in inspection.times%}
+                <li class="time">
+                    {{i.date.strftime("%d.%m.%Y") }}r.
+                    ( {{ days[i.date.weekday()] }} )
+                    w godz. {{i.start_time.strftime("%H:%M")}} – {{i.end_time.strftime("%H:%M")}}
+                </li>
+            {%endfor%}
         </ul>
 
         <p>
@@ -115,6 +121,14 @@ WAŻNE: W trakcie przeglądu prosimy o przestrzeganie rygorów związanych z syt
             Z poważaniem
             Zespół ADM Property sp. z o.o.
         </p>
+    </div>
+
+     <div class="qr-code">
+        <img
+            src="{{ url_for('static', filename = 'img/inspection_qrcode.png') }}"
+            alt="qr-code"
+            title="QR"
+    />
     </div>
 
 

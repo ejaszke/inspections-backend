@@ -1,13 +1,23 @@
 from flask import render_template
-from flask_jwt_extended import jwt_required
 from flask_restful import Resource
 from flask_weasyprint import render_pdf, HTML
-from datetime import date
-# from babel.dates import format_date, format_datetime, format_time
+from datetime import datetime
+
+from repositories import InspectionRepository
+import qrcode
+
+
 
 class InspectionPdfResource(Resource):
     @staticmethod
     def get(id: str):
-        d = date(2002, 12, 31)
-        html = render_template('sample.html', name=id, issue=d)
+        inspection = InspectionRepository.find_by_id(id)
+        img = qrcode.make('test text')
+        img.save('src/static/img/inspection_qrcode.png')
+        html = render_template(
+            'inspection.html',
+            inspection=inspection,
+            current_date=datetime.now(),
+            days=["niedziela", "poniedziałek", "wtorek", "środa", "czwartek", "piątek", "sobota"]
+        )
         return render_pdf(HTML(string=html))
