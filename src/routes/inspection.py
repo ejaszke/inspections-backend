@@ -10,7 +10,7 @@ from resources.inspection import InspectionConfirmationsResource
 
 INSPECTION_BLUEPRINT = Blueprint("inspections", __name__)
 
-CORS(INSPECTION_BLUEPRINT)
+CORS(INSPECTION_BLUEPRINT, resources={r"/api/*": {"origins": "https://inspections-frontend.herokuapp.com"}})
 
 Api(INSPECTION_BLUEPRINT).add_resource(
     InspectionsResource, "/inspections"
