@@ -1,1 +1,1 @@
-web: gunicorn --chdir src server:server
+web: gunicorn --chdir src --log-file=- server:server

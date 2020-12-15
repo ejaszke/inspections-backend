@@ -1,0 +1,136 @@
+<!doctype html>
+<head>
+    <style>
+        @page {
+            size: A4; /* Change from the default size of A4 */
+            margin: 0 1cm 0 1cm; /* Set margin on each page */
+        }
+
+        .logo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            opacity: 0.5;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+        }
+
+        .footer img {
+                        width: 10cm;
+            opacity: 0.5;
+        }
+
+        .current-date {
+            position: fixed;
+            top: 1.5cm;
+            right: 1cm;
+            opacity: 0.5;
+        }
+
+        .logo img {
+            width: 10cm;
+        }
+
+        .main-text {
+            margin-top: 3.5cm;
+            font-family:  sans-serif;
+        }
+
+        .time {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        h1 {
+            position: relative;
+            z-index: 1;
+        }
+
+        p {
+            position: relative;
+            font-size: 14pt;
+            z-index: 20;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img
+            src="{{ url_for('static', filename = 'img/adm-logo.png') }}"
+            alt="previous"
+            title="Previous"
+    />
+    </div>
+
+    <div class="footer">
+        <img
+            src="{{ url_for('static', filename = 'img/footer-logo.png') }}"
+            alt="previous"
+            title="Previous"
+    />
+    </div>
+
+    <div class="current-date">
+        Orzesze, {{ current_date.strftime("%d.%m.%Y") }}r.
+    </div>
+
+    <div class="main-text">
+        <h1>Szanowni Państwo. </h1>
+
+        <p>
+            Informujemy, że w budynkach przy ul. {{ inspection.street }} {{ inspection.street_number }} / {{ inspection.staircases}} w {{ inspection.city }} przeprowadzony
+            zostanie termin poprawkowy <strong>przeglądu wentylacji mechanicznej w mieszkaniach</strong>.
+            Przegląd ten jest obowiązkowy, wymagany prawem budowlanym (art. 62 Prawa Budowlanego). 
+
+        </p>
+
+        <p>Przegląd odbędzie się w poniższych terminach:</p>
+
+        <ul>
+            {%for i in inspection.times%}
+                <li class="time">
+                    {{i.date.strftime("%d.%m.%Y") }}r.
+                    ( {{ days[i.date.weekday()] }} )
+                    w godz. {{i.start_time.strftime("%H:%M")}} – {{i.end_time.strftime("%H:%M")}}
+                </li>
+            {%endfor%}
+        </ul>
+
+        <p>
+            Uprzejmie prosimy o udostępnianie lokali mieszkalnych w/w terminach ( Zalecamy, aby informację o obecności w dniu kontroli wysyłać wiadomością SMS na tel. 509-969-352)
+Przegląd będzie wykonywał p. Jarek tel. 509-969-352
+        </p>
+        <p>
+
+
+W przypadku nieobecności bardzo prosimy o wcześniejsze zgłoszenie do Wykonawcy ( e-mail lub SMS ).
+Telefon kontaktowy DomGroup: 608-544-792
+e-mail: dg-serwis@domgroup.pl
+        </p>
+
+        <p>
+WAŻNE: W trakcie przeglądu prosimy o przestrzeganie rygorów związanych z sytuacją epidemiologiczną. Prosimy o założenie na czas kontroli maseczek ochronnych, zachowanie dystansu ok. 2m oraz przygotowanie własnego długopisu w celu potwierdzenia odbioru protokołu z kontroli.
+        </p>
+
+        <p>
+            Z poważaniem
+            Zespół ADM Property sp. z o.o.
+        </p>
+    </div>
+
+     <div class="qr-code">
+        <img
+            src="{{ url_for('static', filename = 'img/inspection_qrcode.png') }}"
+            alt="qr-code"
+            title="QR"
+    />
+    </div>
+
+
+</h1>
+</body>
+
