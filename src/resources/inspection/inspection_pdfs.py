@@ -10,12 +10,13 @@ import qrcode
 
 class InspectionPdfResource(Resource):
     @staticmethod
-    def get(id: str):
+    def get(type:str, id: str):
         inspection = InspectionRepository.find_by_id(id)
         img = qrcode.make('test text')
         img.save('src/static/img/inspection_qrcode.png')
+        template = 'inspection.html' if type == 'adm' else 'inspection-dg.html'
         html = render_template(
-            'inspection.html',
+            template,
             inspection=inspection,
             current_date=datetime.now(),
             days=["niedziela", "poniedziałek", "wtorek", "środa", "czwartek", "piątek", "sobota"]

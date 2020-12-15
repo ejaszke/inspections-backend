@@ -17,7 +17,7 @@ Api(INSPECTION_BLUEPRINT).add_resource(
 )
 
 Api(INSPECTION_BLUEPRINT).add_resource(
-    InspectionPdfResource, "/pdfs/<string:id>"
+    InspectionPdfResource, "/pdfs/<string:type>/<string:id>"
 )
 
 Api(INSPECTION_BLUEPRINT).add_resource(
