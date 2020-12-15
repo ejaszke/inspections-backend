@@ -62,7 +62,6 @@ class InspectionTimesResource(Resource):
         if not inspection or not inspection_time:
             return {"message": "Not found"}, 404
         else:
-            print(is_repeated)
             inspection_time = InspectionTimeRepository.update(
                 inspection_time=inspection_time,
                 date=_date.fromisoformat(date),
