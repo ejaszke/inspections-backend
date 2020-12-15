@@ -11,16 +11,17 @@ class InspectionRepository:
         return Inspection.query.filter_by(id=id).one()
 
     @staticmethod
-    def create(city, street, street_number, staircases):
-        inspection = Inspection(city, street, street_number, staircases)
+    def create(city, street, street_number, staircases, employee):
+        inspection = Inspection(city, street, street_number, staircases, employee)
         return inspection.save()
 
     @staticmethod
-    def update(inspection: Inspection, city, street, street_number, staircases):
+    def update(inspection: Inspection, city, street, street_number, staircases, employee):
         inspection.city = city
         inspection.street = street
         inspection.street_number = street_number
         inspection.staircases = staircases
+        inspection.employee = employee
         return inspection.save()
 
     @staticmethod
