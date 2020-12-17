@@ -12,8 +12,12 @@ class InspectionTime(db.Model, BaseModel, metaclass=MetaBaseModel):
     date = db.Column(db.Date)
     start_time = db.Column(db.Time)
     end_time = db.Column(db.Time)
+    apartment_notes = db.Column(db.String(300))
+    is_repeated = db.Column(db.Boolean, default=False, nullable=False)
 
-    def __init__(self, date, start_time, end_time):
+    def __init__(self, date, start_time, end_time, apartment_notes, is_repeated):
         self.date = date
         self.start_time = start_time
         self.end_time = end_time
+        self.apartment_notes = apartment_notes
+        self.is_repeated = is_repeated

@@ -15,13 +15,15 @@ class Inspection(db.Model, BaseModel, metaclass=MetaBaseModel):
     street = db.Column(db.String(300))
     street_number = db.Column(db.String(10))
     staircases = db.Column(db.String(100))
+    employee = db.Column(db.String(300))
     created_at = db.Column(db.DateTime, default=datetime.now)
     updated_at = db.Column(db.DateTime, onupdate=datetime.now)
     times = db.relationship('InspectionTime', cascade="all, delete", passive_deletes=True)
     confirmations = db.relationship('InspectionConfirmation', cascade="all, delete", passive_deletes=True)
 
-    def __init__(self, city, street, street_number, staircases):
+    def __init__(self, city, street, street_number, staircases, employee):
         self.city = city
         self.street = street
         self.street_number = street_number
         self.staircases = staircases
+        self.employee = employee
