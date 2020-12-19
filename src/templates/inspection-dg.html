@@ -41,6 +41,10 @@
         ul {
              list-style-type: none;
         }
+
+        .qr-code img {
+            width: 300px;
+        }
     </style>
 </head>
 <body>
@@ -78,9 +82,9 @@
         </ul>
 
         <ul>
-            <strong>Termin poprawkowy: </strong>
             {%for i in inspection.times%}
                 {%if i.is_repeated == true %}
+                    <strong>Termin poprawkowy: </strong>
                     <li class="time">
                         {{i.date.strftime("%d.%m.%Y") }}r.
                         ( {{ days[i.date.weekday()] }} )
