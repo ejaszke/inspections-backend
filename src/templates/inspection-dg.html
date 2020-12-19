@@ -107,10 +107,9 @@ W przypadku nieobecności bardzo prosimy o wcześniejsze zgłoszenie do Administ
 dg-serwis@domgroup.pl
         </p>
     </div>
-
      <div class="qr-code">
         <img
-            src="{{ url_for('static', filename = 'img/inspection_qrcode.png') }}"
+            src="data:image/png;base64,{{ qr_code }}"
             alt="qr-code"
             title="QR"
     />
