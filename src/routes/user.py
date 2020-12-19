@@ -9,7 +9,7 @@ from resources.user import UserResource, UsersResources, UserLoginResource, User
 
 USER_BLUEPRINT = Blueprint("users", __name__)
 
-CORS(USER_BLUEPRINT, resources={r"/api/*": {"origins": "https://inspections-frontend.herokuapp.com/"}})
+CORS(USER_BLUEPRINT, resources={r"/api/*": {"origins": "https://inspections-frontend.herokuapp.com"}})
 
 Api(USER_BLUEPRINT).add_resource(
     UserResource, "/users/<string:id>"
