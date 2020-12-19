@@ -8,3 +8,5 @@ vendor/
 coverage/
 
 .idea
+
+src/static/img/inspection_qrcode.png

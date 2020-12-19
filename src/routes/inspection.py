@@ -10,14 +10,14 @@ from resources.inspection import InspectionConfirmationsResource
 
 INSPECTION_BLUEPRINT = Blueprint("inspections", __name__)
 
-CORS(INSPECTION_BLUEPRINT, resources={r"/api/*": {"origins": "https://inspections-frontend.herokuapp.com"}})
+CORS(INSPECTION_BLUEPRINT, resources={r"/api/*": {"origins": "https://inspections-frontend.herokuapp.com/"}})
 
 Api(INSPECTION_BLUEPRINT).add_resource(
     InspectionsResource, "/inspections"
 )
 
 Api(INSPECTION_BLUEPRINT).add_resource(
-    InspectionPdfResource, "/pdfs/<string:id>"
+    InspectionPdfResource, "/pdfs/<string:type>/<string:id>"
 )
 
 Api(INSPECTION_BLUEPRINT).add_resource(
