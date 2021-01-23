@@ -1,0 +1,121 @@
+<!doctype html>
+<head>
+    <style>
+        @page {
+            size: A4; /* Change from the default size of A4 */
+            margin: 0 1cm 0 1cm; /* Set margin on each page */
+        }
+
+        .logo {
+            position: fixed;
+            top: 0;
+            right: 0;
+            opacity: 0.8;
+        }
+
+        .logo img {
+            width: 7cm;
+        }
+
+        .main-text {
+            margin-top: 3.5cm;
+            font-family:  sans-serif;
+        }
+
+        .time {
+            font-weight: normal;
+            font-size: 20px;
+        }
+
+        h1 {
+            position: relative;
+            z-index: 1;
+        }
+
+        p {
+            position: relative;
+            font-size: 14pt;
+            z-index: 20;
+        }
+
+        ul {
+             list-style-type: none;
+        }
+
+        .qr-code img {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img
+            src="{{ url_for('static', filename = 'img/logo_domgroup.png') }}"
+            alt="previous"
+            title="Previous"
+    />
+    </div>
+
+    <div class="main-text">
+        <h1>Ogłoszenie!</h1>
+
+                <h2>Szanowni Mieszkańcy!</h2>
+        <p>
+            Wspólnota mieszkaniowa uprzejmie informuje lokatorów budynku,
+            że zostanie przeprowadzony przegląd wentylacji mechanicznej w mieszkaniach.
+            Przegląd ten jest obowiązkowy, wymagany prawem budowlanym (art. 62 Prawa Budowlanego).
+        </p>
+
+        <ul>
+            {%for i in inspection.times%}
+                {%if i.is_repeated == false %}
+                    <li class="time">
+                        {{ inspection.city }} {{ inspection.street }} {{ inspection.street_number }} -
+                        <strong>{{ inspection.staircases}} </strong>
+                        <br />
+                        termin: {{i.date.strftime("%d.%m.%Y") }}r.
+                        ( {{ days[i.date.weekday()] }} )
+                        w godz. {{i.start_time.strftime("%H:%M")}} – {{i.end_time.strftime("%H:%M")}}
+                    </li>
+                {%endif%}
+            {%endfor%}
+        </ul>
+
+        <ul>
+            {%for i in inspection.times%}
+                {%if i.is_repeated == true %}
+                    <strong>Termin poprawkowy: </strong>
+                    <li class="time">
+                        {{i.date.strftime("%d.%m.%Y") }}r.
+                        ( {{ days[i.date.weekday()] }} )
+                        w godz. {{i.start_time.strftime("%H:%M")}} – {{i.end_time.strftime("%H:%M")}}
+                    </li>
+                {%endif%}
+            {%endfor%}
+        </ul>
+
+        <p>
+Uprzejmie prosimy o wyrozumiałość i udostępnianie lokali mieszkalnych w/w terminie.
+            Przegląd będzie wykonywał <strong>{{inspection.employee }}</strong>
+
+        </p>
+        <p>
+W przypadku nieobecności bardzo prosimy o wcześniejsze zgłoszenie do Administratora lub Wykonawcy
+        </p>
+        <p style="text-align: right">
+            Telefon kontaktowy DomGroup: Magdalena Kobiałka tel. 784-392-443<br />
+dg-serwis@domgroup.pl
+        </p>
+    </div>
+     <div class="qr-code">
+        <img
+            src="data:image/png;base64,{{ qr_code }}"
+            alt="qr-code"
+            title="QR"
+    />
+    </div>
+
+
+</h1>
+</body>
+

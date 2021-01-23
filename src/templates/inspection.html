@@ -55,6 +55,10 @@
             font-size: 14pt;
             z-index: 20;
         }
+
+        .qr-code img {
+            width: 300px;
+        }
     </style>
 </head>
 <body>
@@ -92,17 +96,33 @@
 
         <ul>
             {%for i in inspection.times%}
-                <li class="time">
-                    {{i.date.strftime("%d.%m.%Y") }}r.
-                    ( {{ days[i.date.weekday()] }} )
-                    w godz. {{i.start_time.strftime("%H:%M")}} – {{i.end_time.strftime("%H:%M")}}
-                </li>
+                {%if i.is_repeated == false %}
+                    <li class="time">
+                        {{i.date.strftime("%d.%m.%Y") }}r.
+                        ( {{ days[i.date.weekday()] }} )
+                        w godz. {{i.start_time.strftime("%H:%M")}} – {{i.end_time.strftime("%H:%M")}}
+                    </li>
+                {%endif%}
+            {%endfor%}
+        </ul>
+
+        <ul>
+            {%for i in inspection.times%}
+                {%if i.is_repeated == true %}
+                    <strong>Termin poprawkowy: </strong>
+                    <li class="time">
+                        {{i.date.strftime("%d.%m.%Y") }}r.
+                        ( {{ days[i.date.weekday()] }} )
+                        w godz. {{i.start_time.strftime("%H:%M")}} – {{i.end_time.strftime("%H:%M")}}
+                    </li>
+                {%endif%}
             {%endfor%}
         </ul>
 
         <p>
-            Uprzejmie prosimy o udostępnianie lokali mieszkalnych w/w terminach ( Zalecamy, aby informację o obecności w dniu kontroli wysyłać wiadomością SMS na tel. 509-969-352)
-Przegląd będzie wykonywał p. Jarek tel. 509-969-352
+            Uprzejmie prosimy o udostępnianie lokali mieszkalnych w/w terminach ( Zalecamy, aby informację
+            o obecności w dniu kontroli wysyłać wiadomością SMS)
+Przegląd będzie wykonywał {{inspection.employee }}
         </p>
         <p>
 
@@ -124,7 +144,7 @@ WAŻNE: W trakcie przeglądu prosimy o przestrzeganie rygorów związanych z syt
 
      <div class="qr-code">
         <img
-            src="{{ url_for('static', filename = 'img/inspection_qrcode.png') }}"
+            src="data:image/png;base64,{{ qr_code }}"
             alt="qr-code"
             title="QR"
     />
