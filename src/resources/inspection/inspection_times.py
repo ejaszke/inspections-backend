@@ -18,8 +18,8 @@ class InspectionTimesResource(Resource):
         Argument("apartment_notes", location="json", required=False)
     )
     @jwt_required
-    def post(id: str, date: str, start_time: str, end_time: str, is_repeated: bool, apartment_notes: str):
-        inspection = InspectionRepository.find_by_id(id)
+    def post(inspection_id: str, date: str, start_time: str, end_time: str, is_repeated: bool, apartment_notes: str):
+        inspection = InspectionRepository.find_by_id(inspection_id)
         if not inspection:
             return {"message": "Not found"}, 404
         inspection.times.append(
