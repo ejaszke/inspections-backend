@@ -26,7 +26,7 @@ Api(INSPECTION_BLUEPRINT).add_resource(
 
 Api(INSPECTION_BLUEPRINT).add_resource(
     InspectionTimesResource,
-    "/inspections/<string:id>/times",
+    "/inspections/<string:inspection_id>/times",
     "/inspections/<string:inspection_id>/times/<string:inspection_time_id>",
 )
 
