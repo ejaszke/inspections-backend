@@ -3,7 +3,7 @@ from repositories import InspectionRepository, InspectionTimeRepository
 from flask_restful.reqparse import Argument
 from util import parse_params
 from models import InspectionTime
-from datetime import date as _date, time
+from datetime import datetime
 from flask_jwt_extended import jwt_required
 from distutils.util import strtobool
 
@@ -24,9 +24,9 @@ class InspectionTimesResource(Resource):
             return {"message": "Not found"}, 404
         inspection.times.append(
             InspectionTime(
-                date=_date.fromisoformat(date),
-                start_time=time.fromisoformat(f"{start_time}:00"),
-                end_time=time.fromisoformat(f"{end_time}:00"),
+                date=datetime.strptime(date, "%Y-%m-%d"),
+                start_time=datetime.strptime(f"{start_time}:00", '%H:%M:%S').time(),
+                end_time=datetime.strptime(f"{end_time}:00", '%H:%M:%S').time(),
                 apartment_notes=apartment_notes,
                 is_repeated=bool(strtobool(is_repeated))
             ))
@@ -64,9 +64,9 @@ class InspectionTimesResource(Resource):
         else:
             inspection_time = InspectionTimeRepository.update(
                 inspection_time=inspection_time,
-                date=_date.fromisoformat(date),
-                start_time=time.fromisoformat(f"{start_time}:00"),
-                end_time=time.fromisoformat(f"{end_time}:00"),
+                date=datetime.strptime(date, "%Y-%m-%d"),
+                start_time=datetime.strptime(f"{start_time}:00", '%H:%M:%S').time(),
+                end_time=datetime.strptime(f"{end_time}:00", '%H:%M:%S').time(),
                 apartment_notes=apartment_notes,
                 is_repeated=bool(strtobool(is_repeated))
             )
