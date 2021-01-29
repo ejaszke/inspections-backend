@@ -27,13 +27,22 @@ class InspectionResource(Resource):
         Argument("street", location="json", required=True, help="Missing parameter"),
         Argument("street_number", location="json", required=True, help="Missing parameter"),
         Argument("staircases", location="json", required=True, help="Missing parameter"),
-        Argument("employee", location="json", required=True, help="Missing parameter")
+        Argument("employee", location="json", required=True, help="Missing parameter"),
+        Argument("flat_count", location="json", required=True, help="Missing parameter"),
     )
     @jwt_required
-    def put(id: str, city: str, street: str, street_number: str, staircases: str, employee: str):
+    def put(id: str, city: str, street: str, street_number: str, staircases: str, employee: str, flat_count: int):
         inspection = InspectionRepository.find_by_id(id)
         if not inspection:
             return {"message": "Not found"}, 404
         else:
-            inspection = InspectionRepository.update(inspection, city, street, street_number, staircases, employee)
+            inspection = InspectionRepository.update(
+                inspection,
+                city,
+                street,
+                street_number,
+                staircases,
+                employee,
+                flat_count
+            )
             return inspection.json
