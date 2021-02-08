@@ -7,7 +7,6 @@ from flask_jwt_extended import jwt_required
 
 class InspectionResource(Resource):
     @staticmethod
-    @jwt_required
     def get(id):
         inspection = InspectionRepository.find_by_id(id)
         return inspection.json
